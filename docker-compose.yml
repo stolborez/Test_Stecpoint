@@ -1,0 +1,59 @@
+version: '3.4'
+
+services:
+  stecpoint.servicea:
+    image: ${DOCKER_REGISTRY-}stecpointservicea:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Stecpoint.ServiceA/Dockerfile
+    restart: always
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      RABBITMQ_HOST: ${RABBITMQ_HOST}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      CONNECTION_STRING_POSTGRES: ${CONNECTION_STRING_POSTGRES}
+    ports:
+      - "${SERVICE_A_PORT}:4300"
+
+  stecpoint.serviceb:
+    image: ${DOCKER_REGISTRY-}stecpointserviceb:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Stecpoint.ServiceB/Dockerfile
+    restart: always
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      RABBITMQ_HOST: ${RABBITMQ_HOST}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      CONNECTION_STRING_POSTGRES: ${CONNECTION_STRING_POSTGRES}
+    ports:
+      - "${SERVICE_B_PORT}:4301"
+  db:
+    image: 'postgres:12.4'
+    deploy:
+      mode: global
+    restart: always
+    environment:
+      POSTGRES_USER: '${DB_USERNAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD}'
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - 'pgvolume:/var/lib/postgresql/data'
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "${RABBITMQ_PORT1}:80"
+      - "${RABBITMQ_PORT2}:5672"
+      - "${RABBITMQ_MANAGEMENT_PORT}:15672"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+volumes:
+  pgvolume:
+    external: true    
+

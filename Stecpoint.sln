@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stecpoint.ServiceA", "src\Stecpoint.ServiceA\Stecpoint.ServiceA.csproj", "{392133E6-38C9-410E-BBF8-437F59F4CD41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D7210D83-C13B-4850-99FF-5141F45610AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stecpoint.ServiceB", "src\Stecpoint.ServiceB\Stecpoint.ServiceB.csproj", "{FE280AC6-C391-4538-98A8-27341E289739}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stecpoint.Data", "src\Stecpoint.Data\Stecpoint.Data.csproj", "{A3F0F9E2-E48C-4BBE-9329-B9E0DEEE07C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stecpoint.Core", "src\Stecpoint.Core\Stecpoint.Core.csproj", "{DF8D1CFD-3BF2-4F6E-9A59-EE20D3D99A7B}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D6C8C398-FC85-4E21-B50D-FC8260EF71C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{392133E6-38C9-410E-BBF8-437F59F4CD41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{392133E6-38C9-410E-BBF8-437F59F4CD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{392133E6-38C9-410E-BBF8-437F59F4CD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{392133E6-38C9-410E-BBF8-437F59F4CD41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE280AC6-C391-4538-98A8-27341E289739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE280AC6-C391-4538-98A8-27341E289739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE280AC6-C391-4538-98A8-27341E289739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE280AC6-C391-4538-98A8-27341E289739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F0F9E2-E48C-4BBE-9329-B9E0DEEE07C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F0F9E2-E48C-4BBE-9329-B9E0DEEE07C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F0F9E2-E48C-4BBE-9329-B9E0DEEE07C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F0F9E2-E48C-4BBE-9329-B9E0DEEE07C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8D1CFD-3BF2-4F6E-9A59-EE20D3D99A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8D1CFD-3BF2-4F6E-9A59-EE20D3D99A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8D1CFD-3BF2-4F6E-9A59-EE20D3D99A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8D1CFD-3BF2-4F6E-9A59-EE20D3D99A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C8C398-FC85-4E21-B50D-FC8260EF71C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C8C398-FC85-4E21-B50D-FC8260EF71C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C8C398-FC85-4E21-B50D-FC8260EF71C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C8C398-FC85-4E21-B50D-FC8260EF71C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{392133E6-38C9-410E-BBF8-437F59F4CD41} = {D7210D83-C13B-4850-99FF-5141F45610AD}
+		{FE280AC6-C391-4538-98A8-27341E289739} = {D7210D83-C13B-4850-99FF-5141F45610AD}
+		{A3F0F9E2-E48C-4BBE-9329-B9E0DEEE07C4} = {D7210D83-C13B-4850-99FF-5141F45610AD}
+		{DF8D1CFD-3BF2-4F6E-9A59-EE20D3D99A7B} = {D7210D83-C13B-4850-99FF-5141F45610AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0FF5780-848A-41BE-A2E0-9E0542668FD5}
+	EndGlobalSection
+EndGlobal
